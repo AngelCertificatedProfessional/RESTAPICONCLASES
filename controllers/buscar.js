@@ -18,6 +18,18 @@ const buscarUsuarios = async(termino = '',res = response) => {
             results: (usuario) ? [ usuario ] : []
         })
     }
+
+    const regex = new RegExp(termino,'i')
+
+    const usuarios = await Usuario.find({
+        $or:[{nombre:regex}, {correo:regex}],
+        $and: [{estado:true}],
+        nombre:regex
+    });
+
+    res.json({
+        results:usuarios
+    })
 }
 
 
