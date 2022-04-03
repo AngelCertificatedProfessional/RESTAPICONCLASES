@@ -122,6 +122,9 @@ web_modules/
 .env.test
 .env.production
 
+uploads/usuarios.*
+uploads/productos.*
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
